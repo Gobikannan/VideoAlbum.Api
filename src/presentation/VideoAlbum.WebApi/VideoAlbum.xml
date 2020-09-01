@@ -1,0 +1,113 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>VideoAlbum.WebApi</name>
+    </assembly>
+    <members>
+        <member name="T:VideoAlbum.WebApi.Controllers.AlbumsController">
+            <summary>
+            ApiController for Album related api calls
+            </summary>
+        </member>
+        <member name="M:VideoAlbum.WebApi.Controllers.AlbumsController.FetchAlbum(System.Int32)">
+            <summary>
+            Fetch all available album types
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:VideoAlbum.WebApi.Controllers.AlbumsController.FetchAllAlbums">
+            <summary>
+            Fetch all available album types
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:VideoAlbum.WebApi.Controllers.AlbumsController.AddNewAlbum(VideoAlbum.Application.Albums.Commands.AddNewAlbum.AddNewAlbumCommand)">
+            <summary>
+            Adds new album
+            </summary>
+            <param name="newAlbumRequest"></param>
+            <returns></returns>
+        </member>
+        <member name="M:VideoAlbum.WebApi.Controllers.AlbumsController.UpdateAlbum(VideoAlbum.Application.Albums.Commands.UpdateAlbum.UpdateAlbumCommand)">
+            <summary>
+            Updates existing album
+            </summary>
+            <param name="updateAlbumRequest"></param>
+            <returns></returns>
+        </member>
+        <member name="M:VideoAlbum.WebApi.Controllers.AlbumsController.UpdateAlbum(System.Int32)">
+            <summary>
+            Deleted existing album
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="T:VideoAlbum.WebApi.Controllers.AlbumTypeController">
+            <summary>
+            ApiController for Album Type related api calls
+            </summary>
+        </member>
+        <member name="M:VideoAlbum.WebApi.Controllers.AlbumTypeController.FetchAllAlbumTypes">
+            <summary>
+            Fetch all available album types
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:VideoAlbum.WebApi.Controllers.ApiController">
+            <summary>
+            Base Api Controller for all
+            </summary>
+        </member>
+        <member name="P:VideoAlbum.WebApi.Controllers.ApiController.Mediator">
+            <summary>
+            Mediator instance
+            </summary>
+        </member>
+        <member name="T:VideoAlbum.WebApi.Controllers.AppSettingsController">
+            <summary>
+            Controller to fetch all app settings metadata
+            </summary>
+        </member>
+        <member name="M:VideoAlbum.WebApi.Controllers.AppSettingsController.#ctor(Microsoft.Extensions.Options.IOptions{VideoAlbum.Common.Config.AppSettings})">
+            <summary>
+            contructor
+            </summary>
+            <param name="appSettings"></param>
+        </member>
+        <member name="M:VideoAlbum.WebApi.Controllers.AppSettingsController.GetAppSettings">
+            <summary>
+            Get Application Settings
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:VideoAlbum.WebApi.Startup">
+            <summary>
+            Startup
+            </summary>
+        </member>
+        <member name="M:VideoAlbum.WebApi.Startup.#ctor(Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            constructor
+            </summary>
+            <param name="configuration"></param>
+        </member>
+        <member name="P:VideoAlbum.WebApi.Startup.Configuration">
+            <summary>
+            Configuration
+            </summary>
+        </member>
+        <member name="M:VideoAlbum.WebApi.Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            This method gets called by the runtime. Use this method to add services to the container.
+            </summary>
+            <param name="services"></param>
+        </member>
+        <member name="M:VideoAlbum.WebApi.Startup.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Hosting.IWebHostEnvironment)">
+            <summary>
+            This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+            </summary>
+            <param name="app"></param>
+            <param name="env"></param>
+        </member>
+    </members>
+</doc>
