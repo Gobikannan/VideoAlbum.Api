@@ -54,7 +54,7 @@ namespace VideoAlbum.WebApi.Controllers
         /// </summary>
         /// <param name="updateAlbumRequest"></param>
         /// <returns></returns>
-        [HttpPatch]
+        [HttpPut]
         public async Task<ActionResult> CreateOrUpdateAlbum([FromBody] UpdateAlbumCommand updateAlbumRequest)
         {
             if (updateAlbumRequest.Id > 0)
