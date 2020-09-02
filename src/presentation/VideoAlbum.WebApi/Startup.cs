@@ -45,7 +45,7 @@ namespace VideoAlbum.WebApi
                 builder =>
                 {
                     // Added localhost dev ursl and a dummy url for prod
-                    builder.WithOrigins("https://localhost:44348", "https://localhost:4200", "http://localhost:4200",
+                    builder.WithOrigins("https://localhost:44348", "https://localhost:4200", "http://localhost:4200", "http://localhost:3000", "https://localhost:3000",
                         "https://enter-your-app-services-name.azurewebsites.net").AllowAnyHeader().AllowAnyMethod();
                 });
             });

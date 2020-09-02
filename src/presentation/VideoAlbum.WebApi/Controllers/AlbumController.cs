@@ -6,6 +6,7 @@ using VideoAlbum.Application.Albums.Queries.FetchAlbumDetailById;
 using VideoAlbum.Application.Albums.Queries.FetchAlbums;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using AutoMapper;
 
 namespace VideoAlbum.WebApi.Controllers
 {
@@ -14,6 +15,16 @@ namespace VideoAlbum.WebApi.Controllers
     /// </summary>
     public class AlbumsController : ApiController
     {
+        private readonly IMapper mapper;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="mapper"></param>
+        public AlbumsController(IMapper mapper)
+        {
+            this.mapper = mapper;
+        }
         /// <summary>
         /// Fetch all available album types
         /// </summary>
@@ -39,26 +50,21 @@ namespace VideoAlbum.WebApi.Controllers
         }
 
         /// <summary>
-        /// Adds new album
-        /// </summary>
-        /// <param name="newAlbumRequest"></param>
-        /// <returns></returns>
-        [HttpPost]
-        public async Task<ActionResult> AddNewAlbum([FromBody] AddNewAlbumCommand newAlbumRequest)
-        {
-            await Mediator.Send(newAlbumRequest);
-            return Ok();
-        }
-
-        /// <summary>
         /// Updates existing album
         /// </summary>
         /// <param name="updateAlbumRequest"></param>
         /// <returns></returns>
-        [HttpPut]
-        public async Task<ActionResult> UpdateAlbum([FromBody] UpdateAlbumCommand updateAlbumRequest)
+        [HttpPatch]
+        public async Task<ActionResult> CreateOrUpdateAlbum([FromBody] UpdateAlbumCommand updateAlbumRequest)
         {
-            await Mediator.Send(updateAlbumRequest);
+            if (updateAlbumRequest.Id > 0)
+            {
+                await Mediator.Send(updateAlbumRequest);
+            } else
+            {
+                var album = this.mapper.Map<AddNewAlbumCommand>(updateAlbumRequest);
+                await Mediator.Send(album);
+            }
             return Ok();
         }
 

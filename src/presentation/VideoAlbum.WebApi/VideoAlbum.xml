@@ -9,6 +9,12 @@
             ApiController for Album related api calls
             </summary>
         </member>
+        <member name="M:VideoAlbum.WebApi.Controllers.AlbumsController.#ctor(AutoMapper.IMapper)">
+            <summary>
+            
+            </summary>
+            <param name="mapper"></param>
+        </member>
         <member name="M:VideoAlbum.WebApi.Controllers.AlbumsController.FetchAlbum(System.Int32)">
             <summary>
             Fetch all available album types
@@ -21,14 +27,7 @@
             </summary>
             <returns></returns>
         </member>
-        <member name="M:VideoAlbum.WebApi.Controllers.AlbumsController.AddNewAlbum(VideoAlbum.Application.Albums.Commands.AddNewAlbum.AddNewAlbumCommand)">
-            <summary>
-            Adds new album
-            </summary>
-            <param name="newAlbumRequest"></param>
-            <returns></returns>
-        </member>
-        <member name="M:VideoAlbum.WebApi.Controllers.AlbumsController.UpdateAlbum(VideoAlbum.Application.Albums.Commands.UpdateAlbum.UpdateAlbumCommand)">
+        <member name="M:VideoAlbum.WebApi.Controllers.AlbumsController.CreateOrUpdateAlbum(VideoAlbum.Application.Albums.Commands.UpdateAlbum.UpdateAlbumCommand)">
             <summary>
             Updates existing album
             </summary>

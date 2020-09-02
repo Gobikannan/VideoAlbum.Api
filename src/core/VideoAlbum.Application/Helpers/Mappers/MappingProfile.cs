@@ -19,6 +19,7 @@ namespace VideoAlbum.Application.Helpers.Mappers
             CreateMap<UpdateAlbumCommand, Album>();
             CreateMap<Album, FetchAlbumDetailByIdResult>();
             CreateMap<Album, FetchAlbumDetailByNameResult>();
+            CreateMap<UpdateAlbumCommand, AddNewAlbumCommand>();
         }
     }
 }
